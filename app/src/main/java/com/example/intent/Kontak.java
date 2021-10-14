@@ -4,9 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -26,7 +24,6 @@ public class Kontak extends AppCompatActivity {
     private SQLiteDatabase dbku;
     private SQLiteOpenHelper Opendb;
     ImageButton add_data, update_data, read_data, delete_data;
-    private ListView lv;
     private KontakAdapter kAdapter;
     String sNama, sNomor;
 
@@ -34,6 +31,7 @@ public class Kontak extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kontak);
+        ListView lv;
         Objects.requireNonNull(getSupportActionBar()).setTitle("Kontak");
 
         lv = findViewById(R.id.listView);
@@ -129,12 +127,7 @@ public class Kontak extends AppCompatActivity {
             dialogInterface.dismiss();
         });
 
-        create.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
+        create.setNegativeButton(android.R.string.cancel, (dialogInterface, i) -> dialogInterface.cancel());
 
         create.show();
     }
@@ -147,7 +140,6 @@ public class Kontak extends AppCompatActivity {
         @SuppressLint("Recycle") Cursor cur = dbku.rawQuery("select * from kontakku where nama like '%" + nm + "%'", null);
         Toast.makeText(this, "Terdapat sejumlah " + cur.getCount(), Toast.LENGTH_LONG).show();
 
-        int i = 0;
         if (cur.getCount() > 0) {
             if (cur.moveToFirst()) {
                 do {
@@ -166,20 +158,12 @@ public class Kontak extends AppCompatActivity {
         final EditText nm = vSearch.findViewById(R.id.eNama);
 
         create.setView(vSearch);
-        create.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                search_kontak(nm.getText().toString());
-                dialogInterface.dismiss();
-            }
+        create.setPositiveButton("Ok", (dialogInterface, i) -> {
+            search_kontak(nm.getText().toString());
+            dialogInterface.dismiss();
         });
 
-        create.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
+        create.setNegativeButton(android.R.string.cancel, (dialogInterface, i) -> dialogInterface.cancel());
 
         create.show();
     }
