@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Intent</string>
+    <string name="tambah_data">Tambah Data</string>
+    <string name="buka_kontak">Buka Kontak</string>
+    <string name="buka_musik">Buka Musik</string>
+    <string name="buka_youtube">Buka Youtube</string>
+    <string name="buka_galeri">Buka Galeri</string>
+    <string name="buka_browser">Buka Browser</string>
+    <string name="dialog">dialog</string>
+    <string name="tutup">Tutup</string>
+    <string name="img">img</string>
+    <string name="more">More</string>
+    <string name="SQL_create_table">CREATE TABLE IF NOT EXISTS kontakku(nama TEXT, nomor TEXT);</string>
+    <string name="masukkan_nama">Masukkan nama</string>
+    <string name="nama">Nama</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="masukkan_nomor_telepon">Masukkan nomor telepon</string>
+    <string name="nama_lama">Nama lama</string>
+    <string name="nama_baru">Nama baru</string>
+    <string name="nomor_baru">Nomor baru</string>
+    <string name="nomor_lama">Nomor lama</string>
+    <string name="try_fragment">Try Fragment</string>
+    <string name="search">Search</string>
+    <string name="go">Go</string>
+    <string name="fragment_1"><![CDATA[<Fragment 1>]]></string>
+    <string name="fragment_2"><![CDATA[<Fragment 2>]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_1">Button 1</string>
+    <string name="button_2">Button 2</string>
+    <string name="fragment_1_nich">Fragment 1 Nich</string>
+    <string name="fragment_2_nich">Fragment 2 Nich</string>
+</resources>

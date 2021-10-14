@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Kontak">
+
+    <ImageButton
+        android:id="@+id/add_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_baseline_add_white"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="225dp"
+        android:contentDescription="@string/dialog" />
+
+    <ImageButton
+        android:id="@+id/update_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_baseline_edit"
+        android:layout_toEndOf="@+id/add_data"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="225dp"
+        android:contentDescription="@string/dialog" />
+
+    <ImageButton
+        android:id="@+id/read_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_baseline_remove_red_eye"
+        android:layout_toEndOf="@+id/update_data"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="225dp"
+        android:contentDescription="@string/dialog" />
+
+    <ImageButton
+        android:id="@+id/delete_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_baseline_delete"
+        android:layout_toEndOf="@+id/read_data"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="225dp"
+        android:contentDescription="@string/dialog" />
+
+    <Button
+        android:id="@+id/tutup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/delete_data"
+        android:text="@string/tutup"/>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="56dp"
+        android:layout_below="@+id/add_data"/>
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buka_kontak"
+        android:layout_marginTop="90dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/buka_kontak"/>
+
+    <Button
+        android:id="@+id/buka_youtube"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/buka_kontak"
+        android:text="@string/buka_youtube"/>
+
+    <Button
+        android:id="@+id/buka_galeri"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/buka_youtube"
+        android:layout_marginTop="20dp"
+        android:text="@string/buka_galeri"/>
+
+    <Button
+        android:id="@+id/buka_browser"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/buka_galeri"
+        android:layout_marginTop="20dp"
+        android:text="@string/buka_browser"/>
+
+    <Button
+        android:id="@+id/buka_fragment"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buka_browser"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/try_fragment"/>
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="10dp">
+    <TextView
+        android:id="@+id/TxtNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nama"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/eNama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/TxtNama"
+        android:autofillHints="no"
+        android:hint="@string/masukkan_nama"
+        android:textColorHint="#757575"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:minHeight="48dp"/>
+
+    <TextView
+        android:id="@+id/TxtJumlahBarang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nomor_telepon"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_below="@+id/TxtNama"
+        android:layout_marginTop="39dp"/>
+
+    <EditText
+        android:id="@+id/eNomor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eNama"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints="no"
+        android:hint="@string/masukkan_nomor_telepon"
+        android:textColorHint="#757575"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+</RelativeLayout>
