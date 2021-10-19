@@ -49,4 +49,31 @@
         android:layout_marginTop="20dp"
         android:text="@string/try_fragment"/>
 
+    <Button
+        android:id="@+id/buka_maps"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buka_fragment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/buka_maps_1"/>
+
+    <Button
+        android:id="@+id/buka_maps_2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buka_maps"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/buka_maps_2" />
+
+    <Button
+        android:id="@+id/buka_maps_3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buka_maps_2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/buka_maps_3" />
+
 </RelativeLayout>

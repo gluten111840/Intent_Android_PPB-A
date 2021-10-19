@@ -30,4 +30,26 @@
     <string name="button_2">Button 2</string>
     <string name="fragment_1_nich">Fragment 1 Nich</string>
     <string name="fragment_2_nich">Fragment 2 Nich</string>
+    <string name="try_maps">Try Maps</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="_0">0</string>
+    <string name="locate">Locate</string>
+    <string name="buka_maps_1">Buka Maps 1</string>
+    <string name="buka_maps_2">Buka Maps 2</string>
+    <string name="buka_maps_3">Buka Maps 3</string>
+    <string name="masukkan_di_sini">Masukkan di sini</string>
+    <string name="zoom">Zoom</string>
+    <string name="normal">Normal</string>
+    <string name="hybrid">Hybrid</string>
+    <string name="terrain">Terrain</string>
+    <string name="satellite">Satellite</string>
+    <string name="nonex">Nonex</string>
+    <string name="none">None</string>
+    <string name="filter">Filter</string>
+    <string name="update">Update</string>
+    <string name="stop">Stop</string>
+    <string name="lat_0_0">Lat: 0.0</string>
+    <string name="long_0_0">Long: 0.0</string>
+    <string name="waktu_00_00">waktu: 00.00</string>
 </resources>

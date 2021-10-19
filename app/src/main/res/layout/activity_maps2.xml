@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Maps2">
+
+    <TextView
+        android:id="@+id/text_lati"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/latitude"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/ed_lati"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="no"
+        android:inputType="numberDecimal"
+        android:hint="@string/masukkan_di_sini"
+        android:layout_toEndOf="@id/text_lati"
+        android:layout_marginStart="10dp"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/text_longi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/longitude"
+        android:textSize="20sp"
+        android:layout_below="@id/text_lati"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/ed_longi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="no"
+        android:inputType="numberDecimal"
+        android:hint="@string/masukkan_di_sini"
+        android:textSize="20sp"
+        android:layout_below="@id/ed_lati"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@id/text_longi"/>
+
+    <TextView
+        android:id="@+id/text_zoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zoom"
+        android:layout_below="@id/text_longi"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/ed_zoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/masukkan_di_sini"
+        android:layout_toEndOf="@id/text_zoom"
+        android:layout_below="@id/ed_longi"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        android:autofillHints="no"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btn_loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/locate"
+        android:layout_toEndOf="@id/ed_lati"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="50dp"/>
+
+    <fragment
+        android:id="@+id/frag_maps1"
+        android:layout_width="415dp"
+        android:layout_height="800dp"
+        android:layout_below="@id/ed_zoom"
+        android:layout_marginTop="10dp"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textLat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/latitude"
+        android:textSize="20sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/txtLat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/textLat"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="3dp"
+        android:textSize="20sp"
+        android:text="@string/_0"/>
+
+    <TextView
+        android:id="@+id/textLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/longitude"
+        android:textSize="20sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/textLat"/>
+
+    <TextView
+        android:id="@+id/txtLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/textLong"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="3dp"
+        android:textSize="20sp"
+        android:text="@string/_0"
+        android:layout_below="@id/txtLat"/>
+
+
+</RelativeLayout>

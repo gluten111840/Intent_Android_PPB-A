@@ -20,12 +20,18 @@ public class MainActivity extends AppCompatActivity {
         Button buka_galeri =  findViewById(R.id.buka_galeri);
         Button buka_youtube =  findViewById(R.id.buka_youtube);
         Button try_fragment = findViewById(R.id.buka_fragment);
+        Button try_maps = findViewById(R.id.buka_maps);
+        Button buka_maps2 = findViewById(R.id.buka_maps_2);
+        Button buka_maps3 = findViewById(R.id.buka_maps_3);
 
         buka_kontak.setOnClickListener(operasi);
         buka_browser.setOnClickListener(operasi);
         buka_galeri.setOnClickListener(operasi);
         buka_youtube.setOnClickListener(operasi);
         try_fragment.setOnClickListener(operasi);
+        try_maps.setOnClickListener(operasi);
+        buka_maps2.setOnClickListener(operasi);
+        buka_maps3.setOnClickListener(operasi);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -36,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.buka_galeri:bukaGaleri();break;
             case R.id.buka_youtube:bukaYoutube();break;
             case R.id.buka_fragment:bukaFragment();break;
+            case R.id.buka_maps:bukaMaps();break;
+            case R.id.buka_maps_2:bukaMaps2();break;
+            case R.id.buka_maps_3:bukaMaps3();break;
         }
     };
 
@@ -64,6 +73,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void bukaFragment() {
         Intent intentku = new Intent(getBaseContext(), Frag.class);
+        startActivityForResult(intentku, 0);
+    }
+
+    private void bukaMaps() {
+        Intent intentku = new Intent(getBaseContext(), Maps.class);
+        startActivityForResult(intentku, 0);
+    }
+
+    private void bukaMaps2() {
+        Intent intentku = new Intent(getBaseContext(), Maps2.class);
+        startActivityForResult(intentku, 0);
+    }
+
+    private void bukaMaps3() {
+        Intent intentku = new Intent(getBaseContext(), Maps3.class);
         startActivityForResult(intentku, 0);
     }
 
