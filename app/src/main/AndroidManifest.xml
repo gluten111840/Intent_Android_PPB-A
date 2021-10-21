@@ -26,10 +26,10 @@
             android:value="AIzaSyDPF8DFJ2S1xvKl5vEAVJte44GGBZIFBqk" />
 
         <activity
-            android:name=".Maps2"
-            android:exported="true" />
-        <activity
             android:name=".Maps3"
+            android:exported="true"/>
+        <activity
+            android:name=".Maps2"
             android:exported="true" />
         <activity
             android:name=".Frag"
