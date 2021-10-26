@@ -1,23 +1,31 @@
 package com.example.intent;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Kontak extends AppCompatActivity {
@@ -25,6 +33,7 @@ public class Kontak extends AppCompatActivity {
     private SQLiteOpenHelper Opendb;
     ImageButton add_data, update_data, read_data, delete_data;
     private KontakAdapter kAdapter;
+    private KontakAdapterBaru bAdapter;
     String sNama, sNomor;
 
     @Override
@@ -45,8 +54,8 @@ public class Kontak extends AppCompatActivity {
         delete_data.setOnClickListener(op);
 
         ArrayList<KontakSuper> listKontak = new ArrayList<>();
-        kAdapter = new KontakAdapter(this, 0, listKontak);
-        lv.setAdapter(kAdapter);
+        bAdapter = new KontakAdapterBaru(this, 0, listKontak);
+        lv.setAdapter(bAdapter);
 
         Opendb = new SQLiteOpenHelper(this, "db.sql", null, 1) {
             @Override
@@ -134,8 +143,8 @@ public class Kontak extends AppCompatActivity {
 
     @SuppressLint("Range")
     private void search_kontak(String nm) {
-        kAdapter.clear();
-        kAdapter.notifyDataSetChanged();
+        bAdapter.clear();
+        bAdapter.notifyDataSetChanged();
 
         @SuppressLint("Recycle") Cursor cur = dbku.rawQuery("select * from kontakku where nama like '%" + nm + "%'", null);
         Toast.makeText(this, "Terdapat sejumlah " + cur.getCount(), Toast.LENGTH_LONG).show();
@@ -194,7 +203,7 @@ public class Kontak extends AppCompatActivity {
 
         dbku.insert("kontakku",null,dataku);
         KontakSuper newKontak = new KontakSuper(sNama, sNomor);
-        kAdapter.add(newKontak);
+        bAdapter.add(newKontak);
         Toast.makeText(this,"Data Tersimpan", Toast.LENGTH_LONG).show();
     }
 
@@ -207,13 +216,13 @@ public class Kontak extends AppCompatActivity {
 
     private void insertKontak(String nama, String nomor) {
         KontakSuper newKontak = new KontakSuper(nama, nomor);
-        kAdapter.add(newKontak);
+        bAdapter.add(newKontak);
     }
 
     @SuppressLint("Range")
     private void ambilData() {
-        kAdapter.clear();
-        kAdapter.notifyDataSetChanged();
+        bAdapter.clear();
+        bAdapter.notifyDataSetChanged();
         @SuppressLint("Recycle") Cursor cur = dbku.rawQuery("select * from kontakku", null);
         Toast.makeText(this, "Terdapat sejumlah " + cur.getCount(), Toast.LENGTH_SHORT).show();
         int i = 0;
@@ -223,6 +232,49 @@ public class Kontak extends AppCompatActivity {
                         cur.getString(cur.getColumnIndex("nomor")));
             cur.moveToNext();
             i++;
+        }
+    }
+
+    public class KontakAdapterBaru extends ArrayAdapter<KontakSuper> {
+
+        class ViewHolder {
+            TextView nama, nomor;
+            Button telepon;
+        }
+
+        public KontakAdapterBaru(@NonNull Context context, int resource, @NonNull List<KontakSuper> objects) {
+            super(context, resource, objects);
+        }
+
+        @SuppressLint("CutPasteId")
+        public View getView(int position, View ConvertView, ViewGroup parent) {
+            KontakSuper dtkontak = getItem(position);
+            ViewHolder viewKontak;
+            if(ConvertView==null) {
+                viewKontak = new ViewHolder();
+                ConvertView = LayoutInflater.from(getContext()).inflate(R.layout.tv_kontak, parent,false);
+                viewKontak.nama = ConvertView.findViewById(R.id.nama);
+                viewKontak.nomor = ConvertView.findViewById(R.id.nomor);
+                viewKontak.telepon = ConvertView.findViewById(R.id.telepon);
+                ConvertView.setTag(viewKontak);
+                viewKontak.telepon.setOnClickListener(view -> {
+                    KontakSuper temp = bAdapter.getItem(position);
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    intent.setData (Uri.parse("tel:" + temp.getNomor()));
+                    startActivity(intent);
+                    Toast.makeText(getContext(), "Button was clicked " + position, Toast.LENGTH_SHORT).show();
+                });
+                Button btn = ConvertView.findViewById(R.id.telepon);
+                btn.setTag(position);
+            }
+            else {
+                viewKontak = (ViewHolder) ConvertView.getTag();
+            }
+
+            viewKontak.nama.setText(dtkontak.getNama());
+            viewKontak.nomor.setText(dtkontak.getNomor());
+
+            return ConvertView;
         }
     }
 }
