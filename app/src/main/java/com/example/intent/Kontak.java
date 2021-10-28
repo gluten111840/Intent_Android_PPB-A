@@ -162,7 +162,7 @@ public class Kontak extends AppCompatActivity {
     private void read_data() {
         View vSearch = LayoutInflater.from(this).inflate(R.layout.search_kontak,null);
         AlertDialog.Builder create = new AlertDialog.Builder(this);
-        create.setTitle("Cari Barang");
+        create.setTitle("Cari Kontak");
 
         final EditText nm = vSearch.findViewById(R.id.eNama);
 
@@ -182,6 +182,7 @@ public class Kontak extends AppCompatActivity {
         View inputnya = li.inflate(R.layout.input_kontak,null);
 
         AlertDialog.Builder dialognya = new AlertDialog.Builder(this);
+        dialognya.setTitle("Tambah Kontak");
         dialognya.setView(inputnya);
         final EditText eNama = inputnya.findViewById(R.id.eNama);
         final EditText eNomor = inputnya.findViewById(R.id.eNomor);
