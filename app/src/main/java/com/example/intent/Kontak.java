@@ -239,7 +239,7 @@ public class Kontak extends AppCompatActivity {
 
         class ViewHolder {
             TextView nama, nomor;
-            Button telepon;
+            Button detail;
         }
 
         public KontakAdapterBaru(@NonNull Context context, int resource, @NonNull List<KontakSuper> objects) {
@@ -255,16 +255,18 @@ public class Kontak extends AppCompatActivity {
                 ConvertView = LayoutInflater.from(getContext()).inflate(R.layout.tv_kontak, parent,false);
                 viewKontak.nama = ConvertView.findViewById(R.id.nama);
                 viewKontak.nomor = ConvertView.findViewById(R.id.nomor);
-                viewKontak.telepon = ConvertView.findViewById(R.id.telepon);
+                viewKontak.detail = ConvertView.findViewById(R.id.detail);
                 ConvertView.setTag(viewKontak);
-                viewKontak.telepon.setOnClickListener(view -> {
+
+                viewKontak.detail.setOnClickListener(view -> {
                     KontakSuper temp = bAdapter.getItem(position);
-                    Intent intent = new Intent(Intent.ACTION_DIAL);
-                    intent.setData (Uri.parse("tel:" + temp.getNomor()));
-                    startActivity(intent);
-                    Toast.makeText(getContext(), "Button was clicked " + position, Toast.LENGTH_SHORT).show();
+                    Intent intentku = new Intent(getBaseContext(), DetailKontak.class);
+                    intentku.putExtra("nama_lengkap", temp.getNama());
+                    intentku.putExtra("no_hp", temp.getNomor());
+                    startActivityForResult(intentku, 0);
                 });
-                Button btn = ConvertView.findViewById(R.id.telepon);
+
+                Button btn = ConvertView.findViewById(R.id.detail);
                 btn.setTag(position);
             }
             else {

@@ -37,9 +37,8 @@ public class KontakAdapter extends ArrayAdapter<KontakSuper> {
             ConvertView = LayoutInflater.from(getContext()).inflate(R.layout.tv_kontak, parent,false);
             viewKontak.nama = ConvertView.findViewById(R.id.nama);
             viewKontak.nomor = ConvertView.findViewById(R.id.nomor);
-            viewKontak.telepon = ConvertView.findViewById(R.id.telepon);
             ConvertView.setTag(viewKontak);
-            Button btn = ConvertView.findViewById(R.id.telepon);
+            Button btn = ConvertView.findViewById(R.id.detail);
             btn.setTag(position);
         }
         else {
